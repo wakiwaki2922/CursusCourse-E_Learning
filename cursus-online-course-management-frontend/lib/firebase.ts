@@ -3,8 +3,8 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, getRedirectResult, GoogleAuthProvider, signInWithPopup, signInWithRedirect, signOut } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDBiu_1vdIE9zcyqj7jb8Z6dRwnMEBCxic",
-    authDomain: "cursuscourse.firebaseapp.com",
+    apiKey: "<API_KEY>",
+    authDomain: "<PROJECT_ID>.firebaseapp.com",
     projectId: "cursuscourse",
     storageBucket: "cursuscourse.appspot.com",
     messagingSenderId: "44709142786",
