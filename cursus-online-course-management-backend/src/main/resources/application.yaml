@@ -1,0 +1,90 @@
+#---------------------------------------------------------------
+#-----------------------  APPLICATION  -------------------------
+spring:
+  application:
+    name: cursus-online-course-management
+  #---------------------------------------------------------------
+  #------------------------  MULTIPART  --------------------------
+  servlet:
+    multipart:
+      max-file-size: 1GB
+      max-request-size: 1GB
+  #---------------------------------------------------------------
+  #---------------------------  SSL  -----------------------------
+  ssl:
+    key-store: classpath:keystore.p12
+    key-store-password: <password>
+    key-store-type: PKCS12
+    key-alias: <alias>
+  #---------------------------------------------------------------
+  #---------------------------  JPA  -----------------------------
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: true
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  #---------------------------------------------------------------
+  #------------------------  THYMELEAF  --------------------------
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+
+  #---------------------------------------------------------------
+  #------------------------  MAIL SENDER  ------------------------
+  mail:
+    host: smtp.gmail.com
+    username: <email>
+    password: <password>
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  #---------------------------------------------------------------
+  #----------------------  SECURITY - JWT  -----------------------
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: <client-id>
+            client-secret: <client-secret>
+            scope:
+              - email
+              - profile
+
+jwt:
+  secret: <secret>
+  expiration-milliseconds: 86400000
+#  expiration-milliseconds: 120000
+  refresh-expiration-time: 259200000
+  expiration-verify-email: 300000
+
+#---------------------------------------------------------------
+#--------------------------  PAYPAL  ---------------------------
+paypal:
+  mode: sandbox
+  client-id: <client-id>
+  secret-key: <secret-key>
+
+#---------------------------------------------------------------
+#--------------------------  AMAZON  ---------------------------
+amazonProperties:
+  accessKey: <access-key>
+  secretKey: <secret-key>
+  bucketName: <bucket-name>
+  region: <region>
+
+#---------------------------------------------------------------
+#-------------------------  FIREBASE  --------------------------
+firebase:
+  bucketName: <bucket-name>
+
+
